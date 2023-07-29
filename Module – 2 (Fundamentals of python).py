@@ -46,12 +46,11 @@ for i in range(2,num+1):
 #5) What is the purpose continue statement in python?
 '''-->The continue statement in Python is used within loops
     (e.g., for loop, while loop) to skip the rest of the current 
-    iteration and move on to the next iteration without executing the remaining code in the loop body.
+    iteration and move on to the next iteration without executing the remaining code in the loop body.'''
 
-#6)Write python program that swap two number with temp variable and
-   without temp variable. 
+#6)Write python program that swap two number with temp variable and without temp variable. 
 
-'''with temp variable'''
+  #withtempvariable
 
 a=int(input("Enter the value of a:"))
 b=int(input("Enter the value of b:"))
@@ -76,10 +75,10 @@ print('A:',a)
 print("B:",b)
 
 
- # 7)Write a Python program to find whether a given number is even or odd,
- # print out an appropriate message to the user.
+'''7)Write a Python program to find whether a given number is even or odd,
+       print out an appropriate message to the user.'''
    
-     n=int(input("Enter a number:"))
+n=int(input("Enter a number:"))
 oddsum=0
 evensum=0
 
@@ -95,7 +94,7 @@ print("Evensum:",evensum)
 
 #8) Write a Python program to test whether a passed letter is a vowel or not.
 
- i=input("Enter a letter:")
+i=input("Enter a letter:")
 
 if i in "aeiou":
      print("Passed Letter is Vowel:")
@@ -105,7 +104,7 @@ else:
 #9) Write a Python program to sum of three given integers. However, if
     #two values are equal sum will be zero.
 
-    a=int(input("Enter First value :"))
+a=int(input("Enter First value :"))
 b=int(input("Enter second value :"))
 c=int(input("Enter third value :"))
 
@@ -125,9 +124,3 @@ if num1==num2 or num1+num2==5 or num1-num2==5:
 
 else:
     ("False")
-
-    
-    
-
-
-    
