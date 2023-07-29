@@ -51,7 +51,7 @@ for i in range(2,num+1):
 #6)Write python program that swap two number with temp variable and
    without temp variable. 
 
-#with temp variable
+'''with temp variable'''
 
 a=int(input("Enter the value of a:"))
 b=int(input("Enter the value of b:"))
@@ -66,7 +66,7 @@ b=temp
 print("The value of b is",b)
 
 
-#Without temp variable
+'''Without temp variable'''
 a=int(input('Enter the value of a:'))
 b=int(input("Enter the value of b:"))
 
