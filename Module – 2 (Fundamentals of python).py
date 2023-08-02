@@ -124,3 +124,100 @@ if num1==num2 or num1+num2==5 or num1-num2==5:
 
 else:
     ("False")
+
+
+#11) Write a python program to sum of the first n positive integers.
+
+    n = int(input("Input a number: "))
+sum_num = (n * (n + 1)) / 2
+print("Sum of the first", n ,"positive integers:", sum_num)
+
+
+#12)Write a Python program to calculate the length of a string.
+
+str = input("Enter a string: ")
+
+counter = 0
+for s in str:
+      counter = counter+1
+print("Length of the input string is:", counter)
+
+#13) Write a Python program to count the number of characters (character frequency) in a string
+
+
+
+
+
+#14) What are negative indexes and why are they used?
+
+'''--> In Python, negative indexes are used to access elements from a sequence 
+        (like strings, lists, or tuples) in a reverse order. Instead of counting from 
+        the beginning of the sequence, negative indexes count from the end. The last element 
+        in the sequence is at index -1, the second-to-last element is at index -2, and so on.'''
+
+
+
+
+
+
+#15) Write a Python program to count occurrences of a substring in a string.
+
+str1 = 'hello Welcome to tops!'
+print(str1.count("wel"))
+
+
+
+#16)Write a Python program to count the occurrences of each word in a given sentence
+
+
+
+
+
+#17) Write a Python program to get a single string from two given strings,
+    #separated by a space and swap the first two characters of each string.
+
+def chars_mix_up(a, b):
+  new_a = b[:2] + a[2:]
+  new_b = a[:2] + b[2:]
+
+  return new_a + ' ' + new_b
+print(chars_mix_up('abc', 'xyz'))
+
+
+'''18) Write a Python program to add 'ing' at the end of a given string (length
+should be at least 3). If the given string already ends with 'ing' then add
+'ly' instead if the string length of the given string is less than 3, leave it
+unchanged.'''
+
+def add_string(str1):
+  length = len(str1)
+
+  if length > 2:
+    if str1[-3:] == 'ing':
+      str1 += 'ly'
+    else:
+      str1 += 'ing'
+
+  return str1
+print(add_string('ab'))
+print(add_string('abc'))
+print(add_string('string'))
+
+
+'''19) Write a Python program to find the first appearance of the substring
+'not' and 'poor' from a given string, if 'not' follows the 'poor', replace the
+whole 'not'...'poor' substring with 'good'. Return the resulting string.'''
+
+def not_poor(str1):
+  snot = str1.find('not')
+  spoor = str1.find('poor')
+  
+
+  if spoor > snot and snot>0 and spoor>0:
+    str1 = str1.replace(str1[snot:(spoor+4)], 'good')
+    return str1
+  else:
+    return str1
+print(not_poor('The lyrics is not that poor!'))
+print(not_poor('The lyrics is poor!'))
+
