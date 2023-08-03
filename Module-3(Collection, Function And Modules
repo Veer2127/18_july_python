@@ -1,1 +1,8 @@
-#1 What is List? How Will You Reverse a List>?
+'''1 What is List? How Will You Reverse a List>?
+--> List is : python knows a number of compound data types, used to group together other value.
+
+how will you reverse a list:
+
+food_list=["pizza","burger","brownie","pasta","french fries","pani puri","rotlo","pav bhaji","dhosa"]
+food_list.reverse()
+print(food_list)
