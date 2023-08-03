@@ -189,19 +189,16 @@ should be at least 3). If the given string already ends with 'ing' then add
 'ly' instead if the string length of the given string is less than 3, leave it
 unchanged.'''
 
-def add_string(str1):
-  length = len(str1)
+mystr=input("Enter a string: ")
 
-  if length > 2:
-    if str1[-3:] == 'ing':
-      str1 += 'ly'
-    else:
-      str1 += 'ing'
+if len(mystr)<3:
+    print("Unchange",mystr)
 
-  return str1
-print(add_string('ab'))
-print(add_string('abc'))
-print(add_string('string'))
+if mystr.endswith('ing'):
+    mystr='ly'
+elif len(mystr)>=3:
+    mystr+='ing'
+print(mystr))
 
 
 '''19) Write a Python program to find the first appearance of the substring
