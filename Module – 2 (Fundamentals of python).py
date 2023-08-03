@@ -116,7 +116,7 @@ else:
 #10) Write a Python program that will return true if the two given integer
 #    values are equal or their sum or difference is 5. 
 
-    num1=int(input("Enter a number 1:-"))
+num1=int(input("Enter a number 1:-"))
 num2=int(input("Enter a number 2:-"))
 
 if num1==num2 or num1+num2==5 or num1-num2==5:
@@ -128,7 +128,7 @@ else:
 
 #11) Write a python program to sum of the first n positive integers.
 
-    n = int(input("Input a number: "))
+n = int(input("Input a number: "))
 sum_num = (n * (n + 1)) / 2
 print("Sum of the first", n ,"positive integers:", sum_num)
 
@@ -169,19 +169,35 @@ print(str1.count("wel"))
 
 #16)Write a Python program to count the occurrences of each word in a given sentence
 
-
+str='hello welcome to tops!'
+print(str.find("to"))
 
 
 
 #17) Write a Python program to get a single string from two given strings,
     #separated by a space and swap the first two characters of each string.
 
-def chars_mix_up(a, b):
-  new_a = b[:2] + a[2:]
-  new_b = a[:2] + b[2:]
+a=int(input("Enter the value of a:"))
+b=int(input("Enter the value of b:"))
 
-  return new_a + ' ' + new_b
-print(chars_mix_up('abc', 'xyz'))
+temp=a
+print("The value of temp variable is:",temp)
+
+a=b
+print("The value of a is",a)
+
+b=temp
+print("The value of b is",b)
+
+
+#Without temp variable
+a=int(input('Enter the value of a:'))
+b=int(input("Enter the value of b:"))
+
+a,b=b,a
+
+print('A:',a)
+print("B:",b)
 
 
 '''18) Write a Python program to add 'ing' at the end of a given string (length
@@ -198,7 +214,7 @@ if mystr.endswith('ing'):
     mystr='ly'
 elif len(mystr)>=3:
     mystr+='ing'
-print(mystr))
+print(mystr)
 
 
 '''19) Write a Python program to find the first appearance of the substring
@@ -217,4 +233,53 @@ def not_poor(str1):
     return str1
 print(not_poor('The lyrics is not that poor!'))
 print(not_poor('The lyrics is poor!'))
+
+#20)Write a Python function that takes a list of words and returns the length
+    #of the longest one.
+
+mystr="Hello and welcome to tops!"
+
+print(len(mystr)) 
+
+#21) Write a Python function to reverses a string if its length is a multiple of 4.
+
+mystr=input('Enter a string:')
+
+length=len(mystr)
+
+print("Length=",length)
+
+if length%4==0:
+    print("Reverse of string is", mystr[::-1])
+
+else:
+    print("The string is not reversed")
+
+
+'''22) Write a Python program to get a string made of the first 2 and the last
+2 chars from a given a string. If the string length is less than 2, return
+instead of the empty string.'''
+
+
+
+
+
+
+
+
+#23)Write a Python function to insert a string in the middle of a string.
+
+test_str = 'welcome the tops!'
+mid_str = 'to'
+
+a = test_str.split()
+b = len(a) // 3
+
+n = ' '.join(a[:b] + [mid_str] + a[b:])
+
+print("The original string is : " + str(test_str))
+print("The formulated string is : " + str(n))
+
+
+
 
