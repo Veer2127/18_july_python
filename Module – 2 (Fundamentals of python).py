@@ -144,8 +144,14 @@ print("Length of the input string is:", counter)
 
 #13) Write a Python program to count the number of characters (character frequency) in a string
 
-
-
+n=input("Enter the String: ")
+s=()
+for i in n:
+    if i in s:
+        s[i]+=1
+    else:
+        s[i]=1
+print(s)
 
 
 #14) What are negative indexes and why are they used?
@@ -154,9 +160,6 @@ print("Length of the input string is:", counter)
         (like strings, lists, or tuples) in a reverse order. Instead of counting from 
         the beginning of the sequence, negative indexes count from the end. The last element 
         in the sequence is at index -1, the second-to-last element is at index -2, and so on.'''
-
-
-
 
 
 
