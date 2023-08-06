@@ -1,2 +1,48 @@
 #1)Write a program to demonstrate the Fruit Store Console application
+# creating product list
+product=[]
+
+# creating product price list
+product_price=[]
+
+
+status=True
+
+while status:
+    menu="""
+            1) press 1 for Product Manager
+            2) press 2 for Customer
+            3) press 3 for exit
+
+
+    """
+    print(menu)
+
+    user_choice=int(input("Enter your choice:"))
+
+    if user_choice==1:
+        user_status=True 
+
+        while user_status:
+            name=input("Enter the Product Name:")
+            product.append(name)
+            price=int(input('Enter Product Price:'))
+            product_price.append(price)
+
+            choice=input("Do you want to add more product? press y for yes and n for no:")
+            if choice=='y' or choice=='Y':
+                user_status=True
+
+            else:
+                user_status=False
+
+    elif user_choice==2:
+        print("CUSTOMER PANEL")
+        
+        for i in range(0,len(product)):
+            print(f"{product[i]} Rs. {product_price[i]}")
+
+    else:
+        print("Thank you for using our Application")
+        status=False
 
