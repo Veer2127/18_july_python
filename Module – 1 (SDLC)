@@ -17,8 +17,12 @@ Programmers, also called software developers or coders, use programming language
 which enable computers to carry out a wide range of functions and operations.
 
 
-4) What is python.?
---> Python is a high-level, interpreted, and general-purpose programming language known for its simplicity, 
-readability, and versatility. Created by Guido van Rossum and first released in 1991, Python has since become one of 
-the most popular programming languages in the world. It is open-source, meaning its source code is freely available, 
-and it has a large and active community of developers contributing to its growth and improvement.
+4) What is python.? 
+-->Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+
+It is used for:
+
+web development (server-side),
+software development,
+mathematics,
+system scripting.
