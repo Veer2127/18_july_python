@@ -13,7 +13,7 @@ else:
 
 # 2)Write a Python program to get the Factorial number of given number.
 
-nnum=int(input('Enter a number:'))
+num=int(input('Enter a number:'))
 f=1
 
 for i in range(1,num+1):
@@ -50,7 +50,7 @@ for i in range(2,num+1):
 
 #6)Write python program that swap two number with temp variable and without temp variable. 
 
-  #withtempvariable
+  #with temp variable
 
 a=int(input("Enter the value of a:"))
 b=int(input("Enter the value of b:"))
@@ -101,8 +101,7 @@ if i in "aeiou":
 else:
      print("Passed Letter is not a vowel:")
 
-#9) Write a Python program to sum of three given integers. However, if
-    #two values are equal sum will be zero.
+#9) Write a Python program to sum of three given integers. However, if two values are equal sum will be zero.
 
 a=int(input("Enter First value :"))
 b=int(input("Enter second value :"))
@@ -113,8 +112,8 @@ if a==b or b==c or c==a:
 else:
     print("sum is :",a+b+c)
 
-#10) Write a Python program that will return true if the two given integer
-#    values are equal or their sum or difference is 5. 
+'''10) Write a Python program that will return true if the two given integer 
+     values are equal or their sum or difference is 5.''' 
 
 num1=int(input("Enter a number 1:-"))
 num2=int(input("Enter a number 2:-"))
@@ -224,25 +223,22 @@ print(mystr)
 'not' and 'poor' from a given string, if 'not' follows the 'poor', replace the
 whole 'not'...'poor' substring with 'good'. Return the resulting string.'''
 
-def not_poor(str1):
-  snot = str1.find('not')
-  spoor = str1.find('poor')
-  
+str=input("Enter a String:")
+print(str)
 
-  if spoor > snot and snot>0 and spoor>0:
-    str1 = str1.replace(str1[snot:(spoor+4)], 'good')
-    return str1
-  else:
-    return str1
-print(not_poor('The lyrics is not that poor!'))
-print(not_poor('The lyrics is poor!'))
+not_index=str.find('not')
+poor_index=str.find('poor')
 
-#20)Write a Python function that takes a list of words and returns the length
-    #of the longest one.
+if not_index!=1 and poor_index!=-1 and not_index<poor_index:
+    print(str[:not_index]+"good"+str[poor_index+4:])
+else:
+    print(str)
 
-mystr="Hello and welcome to tops!"
 
-print(len(mystr)) 
+#20)Write a Python function that takes a list of words and returns the length of the longest one.
+
+
+
 
 #21) Write a Python function to reverses a string if its length is a multiple of 4.
 
@@ -263,25 +259,25 @@ else:
 2 chars from a given a string. If the string length is less than 2, return
 instead of the empty string.'''
 
-
-
-
-
+mystr="Welcome"
+if len(mystr)<2:
+    print([])
+else:
+    print(mystr[:2]+mystr[-2:])
 
 
 
 #23)Write a Python function to insert a string in the middle of a string.
 
-test_str = 'welcome the tops!'
-mid_str = 'to'
+mystr="What are doing?"
 
-a = test_str.split()
-b = len(a) // 3
+split=mystr.split()
 
-n = ' '.join(a[:b] + [mid_str] + a[b:])
+split.insert(2,"You")
 
-print("The original string is : " + str(test_str))
-print("The formulated string is : " + str(n))
+result=" ".join(split)
+
+print(result)
 
 
 
