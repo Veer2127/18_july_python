@@ -1,7 +1,8 @@
-'''1 What is List? How Will You Reverse a List>?'''
---> List is : python knows a number of compound data types, used to group together other value.
+#1 What is List? How Will You Reverse a List>?
+'''-->List is : In Python, a built-in function called reverse() is used to reverse the list. 
+      This simple and quick way to reverse a list in Python requires little memory.'''
 
-how will you reverse a list:
+#how will you reverse a list:
 
 food_list=["pizza","burger","brownie","pasta","french fries","pani puri","rotlo","pav bhaji","dhosa"]
 food_list.reverse()
@@ -9,6 +10,578 @@ print(food_list)
 
 #2)How will you remove last object from a list?
 
-food_list=["pizza","burger","brownie","pasta","french fries","pani puri","rotlo","pav bhaji","dhosa"]
-food_list.remove("dhosa")
-print(food_list)
+list1=[1,45,342,154,32]
+
+
+print(list1[-1])
+
+list1.pop()
+print(list1)
+
+#3) Differentiate between append () and extend () methods?
+
+'''Effect: .append() adds a single element to the end of the list while . 
+   extend() can add multiple individual elements to the end of the list.
+   Argument: .append() takes a single element as argument while . 
+   extend() takes an iterable as argument (list, tuple, dictionaries, sets, strings'''
+
+#4) Write a Python function to get the largest number, smallest num and sum of all from a list.
+
+list1=[1,45,342,154,32]
+ 
+#maximum
+print(max(list1))
+
+#minimum
+print(min(list1))
+
+#sum
+print(sum(list1))
+
+
+#5) How will you compare two lists?
+    
+'''
+The methods of comparing two lists are given below.
+1)The cmp() function.
+2)The set() function and == operator.
+3)The sort() function and == operator.
+4)The collection.counter() function.
+5)The reduce() and map() function.
+'''
+
+
+#6) Write a Python program to count the number of strings where the string
+#   length is 2 or more and the first and last character are same from a given list of strings. 
+
+
+
+
+
+#7)  Write a Python program to remove duplicates from a list. 
+
+mylist=[10,20,10,30,10,40,50,20]
+
+print(mylist)
+
+x=[*set(mylist)]
+x.sort()
+print("After Remove Duplicate value:",x)
+
+
+#8)  Write a Python program to check a list is empty or not. 
+
+mylist=[]
+
+n=int(input('How Many items do you want to enter?:'))
+
+for items in range(n):
+    el=input("Enter The Elements:")
+    mylist.append(el)
+
+print(mylist)
+if mylist==[]:
+    print('Empty List')
+else:
+    print('List is not empty')
+
+
+#9) Write a Python function that takes two lists and returns true if they have at least one common member. 
+
+
+
+#10) Write a Python program to generate and print a list of first 
+#    and last 5 elements where the values are square of numbers between 1 and 30.
+
+l=list()
+
+for i in range(1,31):
+    l.append(i*i)
+
+print(l[:5])
+print(l[-5:])
+
+
+
+#11) Write a Python function that takes a list and returns a new list with unique elements of the first list. 
+
+
+
+
+#12) Write a Python program to convert a list of characters into a string.
+
+s=['A','B','C','D','E','F']
+str1="".join(s)
+
+print(str1)
+
+
+#13) Write a Python program to select an item randomly from a list. 
+
+import random
+choice_list=['red','black','orange','white','blue']
+
+print(random.choice(choice_list))
+
+#14) Write a Python program to find the second smallest number in a list. 
+list1=['10','20','2','5','85','45','62','12']
+length=len(list1)
+print(length)
+list1.sort()
+
+
+print("Second Smallest Number is:",list1[2])
+
+#14)Write a Python program to get unique values from a list
+
+list1=[10,20,10,20,40,10,30,30]
+print("unique Value from list1:")
+
+my_set=set(list1)
+my_list=list(my_set)
+
+print(my_list)
+#15)Write a Python program to check whether a list contains a sub list
+
+list=[10,20,30,40,[10,20,30],50,60]
+sublist=[10,20,3]
+
+if sublist in list:
+    print("Yes...")
+else:
+    print("No...")
+
+#16)Write a Python program to split a list into different variables.
+
+list=[('a','b','c'),('d','e','f'),('g','h','i')]
+
+var1,var2,var3=list
+
+print(var1)
+print(var2)
+print(var3)
+
+#17)What is tuple? Difference between list and tuple.
+
+'''
+::List::
+
+--->It is mutable	
+--->The implication of iterations is time-consuming in the list.	
+--->Operations like insertion and deletion are better performed.	
+--->Consumes more memory.	
+
+::Tuple::
+
+--->It is immutable
+--->Implications of iterations are much faster in tuples.
+--->Elements can be accessed better.
+--->Consumes less memory.
+
+''' 
+
+#18)Write a Python program to create a tuple with different data types.
+
+mytup=("Rajkot","Ahemdabad","Baroda","Mumbai","Gandhinagar","False",10,10.5)
+
+print(mytup)
+
+#19)Write a Python program to create a tuple with numbers.
+
+mytup=10,2,30,45,12,32,123,45648,54213,5654,55
+
+print(mytup)
+
+#20)Write a Python program to convert a tuple to a string. 
+
+mytup=("R","A","J","K","O","T")
+
+tup="".join(mytup)
+print(tup)
+
+#21)Write a Python program to check whether an element exists within a tuple.
+
+mytup=("R","A","J","K","O","T")
+
+if "t" in mytup:
+    print('Yes...')
+else:
+    print('No...')
+
+#22)Write a Python program to find the length of a tuple.
+
+mytup=("R","A","J","K","O","T")
+
+print(len(mytup))
+
+#23)Write a Python program to convert a list to a tuple.
+
+list=("R","A","J","K","O","T")
+
+mytup=tuple(list)
+
+print(mytup)
+
+#24)Write a Python program to reverse a tuple. 
+
+mytup=("R","A","J","K","O","T")
+
+
+print(mytup[::-1])
+
+#25)Write a Python program to replace last value of tuples in a list. 
+
+l =[(10, 20, 40), (40, 50, 60), (70, 80, 90)]
+print([t[:-1] + (100,) for t in l])
+
+#26)Write a Python program to find the repeated items of a tuple.
+
+tuple =( 2, 4, 5, 6, 2, 3, 4, 4, 7) 
+print(tuple)
+count = tuple.count(7)
+print(count)	
+
+#27)Write a Python program to remove an empty tuple(s) from a list of tuples.
+
+tuples=[ (),('ram'),() , ('laxman'),('krishna'), ('', ''),()]
+
+tuples=[i for i in tuples if i]
+
+print(tuples)
+
+#28)Write a Python program to unzip a list of tuples into individual lists. 
+
+print(dict([('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]))
+
+
+'''
+list_1 = [("Nakul", 93), ("Shivansh", 45), ("Samved", 65),
+		("Yash", 88), ("Vidit", 70), ("Pradeep", 52)]
+dict_1 = dict()
+
+for student, score in list_1:
+	dict_1.setdefault(student, []).append(score)
+print(dict_1)
+'''
+#29)Write a Python program to convert a list of tuples into a dictionary.
+
+print(dict([('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]))
+
+#30)How will you create a dictionary using tuples in python? 
+
+
+#31)Write a Python script to sort (ascending and descending) a dictionary by value.
+
+my_dict = {'c': 3,'a': 1,'d': 4,'b': 2}
+
+
+sorted_dict = sorted([(key, value) for (value, key) in my_dict.items()])
+
+
+print("Sorted dictionary is :")
+print(sorted_dict)
+
+#32)Write a Python script to concatenate following dictionaries to create a new one.
+
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+dic4 = {}
+
+
+for d in (dic1, dic2, dic3): dic4.update(d)
+print(dic4)
+
+#33)Write a Python script to check if a given key already exists in a dictionary.
+my_dict = {'c': 3,'a': 1,'d': 4,'b': 2}
+
+if 'a' in my_dict:
+    print("Present....")
+else:
+    print("Not Present....")
+#34)How Do You Traverse Through A Dictionary Object In Python?
+
+'''  To iterate a dictionary using a specified order, use Python's sorted() method.
+     The item will initially be sorted before being traversed through by a for a loop.
+     Dictionary keys are sorted by the function sorted(dictionary. keys()), 
+     and for iterates through the keys that were returned. 
+'''
+#35)How Do You Check The Presence Of A Key In A Dictionary?
+
+my_dict = {'c': 3,'a': 1,'d': 4,'b': 2}
+
+if 'a' in my_dict:
+    print("Present....")
+
+#36)Write a Python script to print a dictionary where the keys are numbers between 1 and 15.
+
+d=dict()
+
+for x in range(1,16):
+    d[x]=x*x
+
+print(d)
+
+#37)Write a Python program to check multiple keys exists in a dictionary
+
+stdata={'id':1,'name':'Shivarsh','subject':'Python'}
+
+
+print(stdata.keys())
+
+#38)Write a Python script to merge two Python dictionaries
+
+dict1 = {'a': 100, 'b': 200}
+dict2 = {'x': 300, 'y': 200}
+
+
+d = dict1.copy()
+d.update(dict2)
+print(d)
+
+#39)Write a Python program to map two lists into a dictionary
+
+keys = ['red', 'green', 'blue']
+values = ['1','2', '3']
+
+
+color_dictionary = dict(zip(keys, values))
+print(color_dictionary)
+
+#40)Write a Python program to combine two dictionary adding values for common keys.
+'''d1 = {'a': 100, 'b': 200, 'c':300} o d2 = {'a': 300, 'b': 200,’d’:400}'''
+'''Sample output: Counter ({'a': 400, 'b': 400,’d’: 400, 'c': 300}).'''
+
+from collections import Counter
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+d = Counter(d1) + Counter(d2)
+print(d)
+
+#41)Write a Python program to print all unique values in a dictionary. 
+
+L = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+print("Original List: ",L)
+u_value = set( val for dic in L for val in dic.values())
+print("Unique Values: ",u_value)
+
+#42)Why Do You Use the Zip () Method in Python?
+
+'''The zip() function in Python is used to combine two or more iterable dictionaries into a single iterable, 
+where corresponding elements from the input iterable are paired together as tuples. 
+When using zip() with dictionaries, it pairs the keys and values of the dictionaries based on 
+their position in the dictionary.'''
+
+#43)Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary.
+'''Sample data: {'1': ['a','b'], '2': ['c','d']}
+      Expected Output:
+      ac ad bc bd '''
+
+import itertools      
+d ={'1':['a','b'], '2':['c','d']}
+for combo in itertools.product(*[d[k] for k in sorted(d.keys())]):
+    print(''.join(combo))
+	
+#44)Write a Python program to find the highest 3 values in a dictionary
+
+my_dict = {'A': 67, 'B': 23, 'C': 45,'D': 56, 'E': 12, 'F': 69}
+
+print("Initial Dictionary:")
+print(my_dict, "\n")
+
+print("Dictionary with 3 highest values:")
+print("Keys: Values")
+
+x=list(my_dict.values())
+d=dict()
+x.sort(reverse=True)
+x=x[:3]
+for i in x:
+	for j in my_dict.keys():
+		if(my_dict[j]==i):
+			print(str(j)+" : "+str(my_dict[j]))
+
+'''#45)Write a Python program to combine values in python list of dictionaries.
+Sample data: [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount':
+300}, o {'item': 'item1', 'amount': 750}]
+Expected Output:
+Counter ({'item1': 1150, 'item2': 300})''' 
+
+from collections import Counter
+item_list = [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300}, {'item': 'item1', 'amount': 750}]
+result = Counter()
+for d in item_list:
+    result[d['item']] += d['amount']
+print(result) 
+
+
+'''#46)Write a Python program to create a dictionary from a string.
+Note: Track the count of the letters from the string.
+Sample string: 'w3resource'
+Expected output:
+{'3': 1,’s’: 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}'''
+
+from collections import defaultdict, Counter
+str1 = 'w3resource' 
+my_dict = {}
+for letter in str1:
+    my_dict[letter] = my_dict.get(letter, 0) + 1
+print(my_dict)
+
+
+#47)Write a Python function to calculate the factorial of a number (a nonnegative integer)
+
+def factorial():
+    n=int(input("Enter Your Number:"))
+    for i in range(1,n):
+        n=n*i
+    
+    print(n)
+
+factorial()
+
+#48)Write a Python function to check whether a number is in a given range
+
+def nrange():
+    n=int(input("Enter Your Number:"))
+    if n in range(1,21):
+        return print("Yes.....")
+    else:
+        return print("No.....")
+
+nrange()
+
+#49)Write a Python function to check whether a number is perfect or not.
+
+def perfect_number(n):
+    sum = 0
+    for x in range(1, n):
+        if n % x == 0:
+            sum += x
+    return sum == n
+print(perfect_number(6))
+
+#50)Write a Python function that checks whether a passed string is palindrome or not 
+
+def isPalindrome(string):
+	left_pos = 0
+	right_pos = len(string) - 1
+	
+	while right_pos >= left_pos:
+		if not string[left_pos] == string[right_pos]:
+			return False
+		left_pos += 1
+		right_pos -= 1
+	return True
+print(isPalindrome('aza')) 
+
+#51)How Many Basic Types Of Functions Are Available In Python?
+
+''' 
+Two Types: 
+
+There are mainly two types of functions in Python. Built-in library function: These are Standard functions in 
+Python that are available to use. User-defined function: We can create our own functions based on our requirements'''
+
+#52)How can you pick a random item from a list or tuple?
+
+'''Using random.
+Create a tuple and add some dummy data to it. Generate a random item from the tuple using random. 
+choice() method(This function returns a random element from the specified sequence 
+i.e tuple here) by passing the input tuple as an argument to the choice() function.'''
+
+#53)How can you pick a random item from a range? 
+
+'''
+1) Using random.randrange() function.
+2) Using random.randint() function.
+3) Using random.random() function.
+4) Using random.sample()
+'''
+
+#54)How can you get a random number in python? 
+
+'''
+Generating a random integer within a given range – randint()
+
+Firstly, import the random module of Python.
+Then, we call the randint(min, max) method to get a random integer within the given range and store it in the variable n.
+Print the randomly generated number.'''
+
+#55)How will you set the starting value in generating random numbers?
+
+'''
+The seed() method is used to initialize the random number generator. 
+The random number generator needs a number to start with (a seed value), to be able to generate a random number. 
+By default the random number generator uses the current system time.
+'''
+
+#56)How will you randomizes the items of a list in place?
+
+
+'''
+The shuffle() method randomizes the items of a list in place.
+'''
+
+#57)Write a Python program to read a random line from a file.
+
+import random
+def random_line(fname):
+    lines = open(fname).read().splitlines()
+    return random.choice(lines)
+print(random_line('test.txt'))
+
+#58)Write a Python program to convert degree to radian
+
+pi=22/7
+degree = float(input("Input degrees: "))
+radian = degree*(pi/180)
+print(radian)
+
+#59)Write a Python program to calculate the area of a trapezoid
+
+base_1 = 5
+base_2 = 6
+height = float(input("Height of trapezoid: "))
+base_1 = float(input('Base one value: '))
+base_2 = float(input('Base two value: '))
+area = ((base_1 + base_2) / 2) * height
+print("Area is:", area)
+
+#60)Write a Python program to calculate the area of a parallelogram
+
+base = float(input('Length of base: '))
+height = float(input('Measurement of height: '))
+area = base * height
+print("Area is: ", area)
+
+#61)Write a Python program to calculate surface volume and area of a cylinder 
+
+pi=22/7
+height = float(input('Height of cylinder: '))
+radian = float(input('Radius of cylinder: '))
+volume = pi * radian * radian * height
+sur_area = ((2*pi*radian) * height) + ((pi*radian**2)*2)
+print("Volume is: ", volume)
+print("Surface Area is: ", sur_area)
+
+#62)Write a Python program to returns sum of all divisors of a number
+
+def sum_div(number):
+    divisors = [1]
+    for i in range(2, number):
+        if (number % i)==0:
+            divisors.append(i)
+    return sum(divisors)
+print(sum_div(8))
+print(sum_div(12))
+
+
+#63)Write a Python program to find the maximum and minimum numbers from the specified decimal numbers.
+
+from decimal import *
+data = list(map(Decimal, '2.45 2.69 2.45 3.45 2.00 0.04 7.25'.split()))
+print("Maximum: ", max(data))
+print("Minimum: ", min(data))
+
+
