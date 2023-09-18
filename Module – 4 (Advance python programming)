@@ -1,10 +1,20 @@
-'''1) What is File function in python? What is keywords to create and write file.
-    To write to a file in Python using a for statement, you can follow these steps: Open the file using the open() function with the appropriate mode ('w' for writing). 
-    Use the for statement to loop over the data you want to write to the file. Use the file object's write() method to write the data to the file.'''
+#1) What is File function in python? What is keywords to create and write file.
+    
+'''
+readlines() : This function returns a list where each element is single line of that file. 
+write() : This function writes a fixed sequence of characters to a file. 
+writelines() : This function writes a list of string. 
+append() : This function append string to the file instead of overwriting the file.
+'''
 
 
 #2)Write a Python program to read an entire text file. 
 
+def file_read(fname):
+        txt = open(fname)
+        print(txt.read())
+
+file_read('abc.txt')
 
 
 
@@ -20,78 +30,98 @@ file_read('abc.txt')
 
 #4) Write a Python program to read first n lines of a file.
 
-
-
+def file_read_from_head(fname, nlines):
+        from itertools import islice
+        with open(fname) as f:
+                for line in islice(f, nlines):
+                        print(line)
+file_read_from_head('abc.txt',2)
 
 #5) Write a Python program to read last n lines of a file.
 
+import sys
+import os
+def file_read_from_tail(fname,lines):
+        bufsize = 8192
+        fsize = os.stat(fname).st_size
+        iter = 0
+        with open(fname) as f:
+                if bufsize > fsize:
+                        bufsize = fsize-1
+                        data = []
+                        while True:
+                                iter +=1
+                                f.seek(fsize-bufsize*iter)
+                                data.extend(f.readlines())
+                                if len(data) >= lines or f.tell() == 0:
+                                        print(''.join(data[-lines:]))
+                                        break
+
+file_read_from_tail('abc.txt',2)
 
 
 #6) Write a Python program to read a file line by line and store it into a list.
 
+def file_read(fname):
+        with open(fname) as f:
+                #Content_list is the list that contains the read lines.     
+                content_list = f.readlines()
+                print(content_list)
 
-
+file_read('abc.txt')
 
 #7) Write a Python program to read a file line by line store it into a variable.
 
-L = ["Geeks\n", "for\n", "Geeks\n"]
-
-file1 = open('myfile.txt', 'w')
-file1.writelines(L)
-file1.close()
-
-file1 = open('myfile.txt', 'r')
-Lines = file1.readlines()
-count = 0
-for line in Lines:
-	count += 1
-	print("Line{}: {}".format(count, line.strip()))
+def file_read(fname):
+        with open (fname, "r") as myfile:
+                data=myfile.readlines()
+                print(data)
+file_read('abc.txt')
         
 
-#8) Write a python program to find the longest words.
+#8) Write a python program to find the longest words.
 
-def largestWord(s):
-	s = sorted(s, key = len)
-	print(s[-1])
+def longest_word(filename):
+    with open(filename, 'r') as infile:
+              words = infile.read().split()
+    max_len = len(max(words, key=len))
+    return [word for word in words if len(word) == max_len]
 
-if __name__ == "__main__":
-	s = "be confident and be yourself"
-	l = list(s.split(" "))
+print(longest_word('abc.txt'))	
 
-	largestWord(l)
-	
+#9) Write a Python program to count the number of lines in a text file.
 
-#9) Write a Python program to count the number of lines in a text file.
-
-with open("myfile.txt", 'r') as fp:
-	lines = len(fp.readlines())
-	print('Total Number of lines:', lines)
+def file_lengthy(fname):
+        with open(fname) as f:
+                for i, l in enumerate(f):
+                        pass
+        return i + 1
+print("Number of lines in the file: ",file_lengthy("abc.txt"))
 	
 
 #10) Write a Python program to count the frequency of words in a file.
-word = "apple"
-count = 0
-with open("temp.txt", 'r') as f:
-	for line in f:
-		words = line.split()
-		for i in words:
-			if(i==word):
-				count=count+1
-print("Occurrences of the word", word, ":", count)
+from collections import Counter
+def word_count(fname):
+        with open(fname) as f:
+                return Counter(f.read().split())
+
+print("Number of words in the file :",word_count("abc.txt"))
 
 
 #11) Write a Python program to write a list to a file.
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+with open('abc.txt', "w") as myfile:
+        for c in color:
+                myfile.write("%s\n" % c)
 
-f = open('myfile.txt', 'r')
-print(f.read())
-f.close()
+content = open('abc.txt')
+print(content.read())
+
 
 #12) Write a Python program to copy the contents of a file to another file.
 
-with open('first.txt','r') as firstfile, open('second.txt','w') as secondfile:
-	
-	for line in firstfile:
-			secondfile.write(line)
+from shutil import copyfile
+copyfile('test.py', 'abc.py')
 			
 #13) Explain Exception handling? What is an Error in Python? 
 '''An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. 
@@ -103,68 +133,37 @@ with open('first.txt','r') as firstfile, open('second.txt','w') as secondfile:
     You can specify one or more except blocks to catch and handle specific exceptions.'''
 
 #15) When will the else part of try-except-else be executed?
-try:
-  print("Hello")
-except:
-  print("Something went wrong")
-else:
-  print("Nothing went wrong")
+'''when no exception occurs
+When will the else part of try-except-else be executed? Explanation: The else part is executed when no exception occurs'''
 
 #16) Can one block of except statements handle multiple exception?
-'''Yes, a single block of except statements in Python can handle multiple exceptions. '''
+'''Yes, a single block of except statements in Python can handle multiple exceptions. 
+    This feature allows you to handle different types of exceptions using a single block of code''' 
 
 
 #17) When is the finally block executed?
 
-try:
-    x = 5  # Define the variable x
-    if x > 3:
-        print("x is greater than 3")
-    else:
-        raise ValueError("x is not greater than 3")
-except ValueError as e:
-    print(f"An exception occurred: {e}")
-else:
-    print("Nothing went wrong")
-finally:
-    print("The try...except block is finished")
-
+'''The finally block always executes when the try block exits. This ensures that the finally block is executed even if an unexpected exception occurs.
+'''
 
 #18) What happens when „1‟== 1 is executed?
-    '''When the expression "1" == 1 is executed in Python, it compares a string "1" to an integer 1 using the equality operator (==).
-    As a result, the expression "1" == 1 evaluates to False.'''
+'''It simply evaluates to False and does not raise any exception.
+'''
 
 #19) How Do You Handle Exceptions With Try/Except/Finally In Python? Explain with coding snippets.
-'''    In Python, you can handle exceptions using a try, except, and finally block structure. \
-    Here's how it works with coding snippets to illustrate each part:
-
-1)Try: You place the code that may raise an exception inside the try block.
-
-2)Except: You define one or more except blocks to catch and handle specific exceptions. If an exception is raised in the try block, Python will look for a matching except block.
-
-3)Finally: The finally block is optional but allows you to specify code that should be executed regardless of whether an exception was raised or not.'''
+'''First try clause is executed i.e. the code between try and except clause. 
+    If there is no exception, then only try clause will run, except clause will not get executed. 
+    If any exception occurs, the try clause will be skipped and except clause will run.'''
 
   
 
 #20) Write python program that user to enter only odd numbers, else will raise an exception.
-try:
-    while True:
-        user_input = input("Enter an odd number (or 'q' to quit): ")
-        
-        # Check if the user wants to quit
-        if user_input.lower() == 'q':
-            break
-        
-        number = int(user_input)
-        
-        if number % 2 == 0:
-            raise ValueError("Even numbers are not allowed. Please enter an odd number.")
-        
-        print(f"You entered an odd number: {number}")
-except ValueError as e:
-    print(f"Error: {e}")
-except KeyboardInterrupt:
-    print("\nProgram terminated by the user.")
+num = int(input("Enter a number: "))
+mod = num % 2
+if mod > 0:
+    print("This is an odd number.")
+else:
+    print("This is an even number.")
 
 
 #21) What are oops concepts? Is multiple inheritance supported in java.?
@@ -172,27 +171,58 @@ except KeyboardInterrupt:
 '''Java doesn't support Multiple Inheritance, but we can use interfaces (instead of classes) to achieve the same purpose.'''
 
 #22) How to Define a Class in Python? What Is Self? Give An Example Of A Python Class 
-'''In Python, you can define a class using the class keyword. 
-A class is a blueprint for creating objects, and it defines attributes (variables) and methods (functions) that the objects of the class will have.
-Here's the basic syntax for defining a class:
-In this example:
 
-class ClassName: defines a class named ClassName.
-
-class_variable is a class attribute, shared by all instances of the class.
-
-__init__(self, param1, param2) is the constructor method, also known as the initializer. It is called when you create an instance of the class and initializes instance variables instance_variable1 and instance_variable2 with the values passed as parameters.
-
-instance_method(self) is an instance method that can operate on the instance data.
-
-object_name = ClassName(param1_value, param2_value) creates an instance of the class and calls the constructor method to initialize its attributes.
-
-object_name.class_variable accesses the class attribute.
-
-object_name.instance_method() calls the instance method.'''
+'''The self variable in Python can also be used to access a variable field within the class definition. 
+    Let us understand this with the help of example code: class Student: def __init__(self, Alex): self.name = Alex #name created in constructor def get_student_name(self): return self.name'''
 
 
+#23) Write a Python class named Rectangle constructed by a length and width and a method which will compute the area of a rectangle
+class Rectangle():
+    def __init__(self, l, w):
+        self.length = l
+        self.width  = w
 
-#23) 
+    def rectangle_area(self):
+        return self.length*self.width
+
+newRectangle = Rectangle(12, 10)
+print(newRectangle.rectangle_area())
+
+#24) Write a Python class named Circle constructed by a radius and two methods which will compute the area and the perimeter of a circle
+class Circle():
+    def __init__(self, r):
+        self.radius = r
+
+    def area(self):
+        return self.radius**2*3.14
+    
+    def perimeter(self):
+        return 2*self.radius*3.14
+
+NewCircle = Circle(8)
+print(NewCircle.area())
+print(NewCircle.perimeter())
+
+#25) Explain Inheritance in Python with an example? What is init? Or What Is A Constructor In Python?
+
+'''A triangle is a polygon with 3 sides. So, we can create a class called Triangle which inherits from Polygon . This makes all the attributes of Polygon class available to the Triangle class. We don't need to define them again'''
+
+'''
+Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. In Python the __init__() method is called the constructor and is always called when an object is created.'''
+
+'''
+A Constructor is a special kind of method that have same name as the class in python self variable do the same. It can be used to set the values of the members of an object'''
+
+#26) What is Instantiation in terms of OOP terminology? 
+
+
+'''
+Instantiation − The creation of an instance of a class. Method − A special kind of function that is defined in a class definition. Object − A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods
+'''
+
+#27) What is used to check whether an object o is an instance of class A?
+
+'''Conclusion. The `isinstance()` function can be used to check if an object is an instance of a particular class'''
+
 
 
