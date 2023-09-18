@@ -1,4 +1,198 @@
-1) What is File function in python? What is keywords to create and write file.
---> The File function in Python is used to open, read, write, and close files. 
-    It can be used to work with different file types, including text files, binary files, and CSV files. 
-    The keywords to create and write a file in Python are:
+'''1) What is File function in python? What is keywords to create and write file.
+    To write to a file in Python using a for statement, you can follow these steps: Open the file using the open() function with the appropriate mode ('w' for writing). 
+    Use the for statement to loop over the data you want to write to the file. Use the file object's write() method to write the data to the file.'''
+
+
+#2)Write a Python program to read an entire text file. 
+
+
+
+
+#3) Write a Python program to append text to a file and display the text. 
+def file_read(fname):
+        from itertools import islice
+        with open(fname, "w") as myfile:
+                myfile.write("Python Exercises\n")
+                myfile.write("Java Exercises")
+        txt = open(fname)
+        print(txt.read())
+file_read('abc.txt')
+
+#4) Write a Python program to read first n lines of a file.
+
+
+
+
+#5) Write a Python program to read last n lines of a file.
+
+
+
+#6) Write a Python program to read a file line by line and store it into a list.
+
+
+
+
+#7) Write a Python program to read a file line by line store it into a variable.
+
+L = ["Geeks\n", "for\n", "Geeks\n"]
+
+file1 = open('myfile.txt', 'w')
+file1.writelines(L)
+file1.close()
+
+file1 = open('myfile.txt', 'r')
+Lines = file1.readlines()
+count = 0
+for line in Lines:
+	count += 1
+	print("Line{}: {}".format(count, line.strip()))
+        
+
+#8) Write a python program to find the longest words.
+
+def largestWord(s):
+	s = sorted(s, key = len)
+	print(s[-1])
+
+if __name__ == "__main__":
+	s = "be confident and be yourself"
+	l = list(s.split(" "))
+
+	largestWord(l)
+	
+
+#9) Write a Python program to count the number of lines in a text file.
+
+with open("myfile.txt", 'r') as fp:
+	lines = len(fp.readlines())
+	print('Total Number of lines:', lines)
+	
+
+#10) Write a Python program to count the frequency of words in a file.
+word = "apple"
+count = 0
+with open("temp.txt", 'r') as f:
+	for line in f:
+		words = line.split()
+		for i in words:
+			if(i==word):
+				count=count+1
+print("Occurrences of the word", word, ":", count)
+
+
+#11) Write a Python program to write a list to a file.
+
+f = open('myfile.txt', 'r')
+print(f.read())
+f.close()
+
+#12) Write a Python program to copy the contents of a file to another file.
+
+with open('first.txt','r') as firstfile, open('second.txt','w') as secondfile:
+	
+	for line in firstfile:
+			secondfile.write(line)
+			
+#13) Explain Exception handling? What is an Error in Python? 
+'''An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. 
+    In general, when a Python script encounters a situation that it cannot cope with, it raises an exception. 
+    An exception is a Python object that represents an error.'''
+
+#14) How many except statements can a try-except block have? Name Some built-in exception classes: 
+'''A try-except block in Python can have multiple except statements, allowing you to handle different types of exceptions in different ways. 
+    You can specify one or more except blocks to catch and handle specific exceptions.'''
+
+#15) When will the else part of try-except-else be executed?
+try:
+  print("Hello")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")
+
+#16) Can one block of except statements handle multiple exception?
+'''Yes, a single block of except statements in Python can handle multiple exceptions. '''
+
+
+#17) When is the finally block executed?
+
+try:
+    x = 5  # Define the variable x
+    if x > 3:
+        print("x is greater than 3")
+    else:
+        raise ValueError("x is not greater than 3")
+except ValueError as e:
+    print(f"An exception occurred: {e}")
+else:
+    print("Nothing went wrong")
+finally:
+    print("The try...except block is finished")
+
+
+#18) What happens when „1‟== 1 is executed?
+    '''When the expression "1" == 1 is executed in Python, it compares a string "1" to an integer 1 using the equality operator (==).
+    As a result, the expression "1" == 1 evaluates to False.'''
+
+#19) How Do You Handle Exceptions With Try/Except/Finally In Python? Explain with coding snippets.
+'''    In Python, you can handle exceptions using a try, except, and finally block structure. \
+    Here's how it works with coding snippets to illustrate each part:
+
+1)Try: You place the code that may raise an exception inside the try block.
+
+2)Except: You define one or more except blocks to catch and handle specific exceptions. If an exception is raised in the try block, Python will look for a matching except block.
+
+3)Finally: The finally block is optional but allows you to specify code that should be executed regardless of whether an exception was raised or not.'''
+
+  
+
+#20) Write python program that user to enter only odd numbers, else will raise an exception.
+try:
+    while True:
+        user_input = input("Enter an odd number (or 'q' to quit): ")
+        
+        # Check if the user wants to quit
+        if user_input.lower() == 'q':
+            break
+        
+        number = int(user_input)
+        
+        if number % 2 == 0:
+            raise ValueError("Even numbers are not allowed. Please enter an odd number.")
+        
+        print(f"You entered an odd number: {number}")
+except ValueError as e:
+    print(f"Error: {e}")
+except KeyboardInterrupt:
+    print("\nProgram terminated by the user.")
+
+
+#21) What are oops concepts? Is multiple inheritance supported in java.?
+
+'''Java doesn't support Multiple Inheritance, but we can use interfaces (instead of classes) to achieve the same purpose.'''
+
+#22) How to Define a Class in Python? What Is Self? Give An Example Of A Python Class 
+'''In Python, you can define a class using the class keyword. 
+A class is a blueprint for creating objects, and it defines attributes (variables) and methods (functions) that the objects of the class will have.
+Here's the basic syntax for defining a class:
+In this example:
+
+class ClassName: defines a class named ClassName.
+
+class_variable is a class attribute, shared by all instances of the class.
+
+__init__(self, param1, param2) is the constructor method, also known as the initializer. It is called when you create an instance of the class and initializes instance variables instance_variable1 and instance_variable2 with the values passed as parameters.
+
+instance_method(self) is an instance method that can operate on the instance data.
+
+object_name = ClassName(param1_value, param2_value) creates an instance of the class and calls the constructor method to initialize its attributes.
+
+object_name.class_variable accesses the class attribute.
+
+object_name.instance_method() calls the instance method.'''
+
+
+
+#23) 
+
+
