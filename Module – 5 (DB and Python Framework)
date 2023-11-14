@@ -1,1 +1,24 @@
+1) Why Django should be used for web-development? Explain how you can create a project in Django?
+--> It is fast,secure, scalable,easy to use,
+    Step 1: Opening PowerShell. The first step is to open PowerShell. ...
+    Step 2: Verifying Python Installation. ...
+    Step 3: Upgrading PIP. ...
+    Step 4: Creating a Project Directory. ...
+    Step 5: Creating the Virtual Environment. ...
+    Step 6: Activating the Virtual Environment. ...
+    Step 7: Installing Django. ...
+    Step 8: Create the Django Project.
+
+2) How to check installed version of django?
+-->  After the installation has completed, you can verify your Django installation 
+     by executing django-admin --version in the command prompt.
+3) Explain what does django-admin.py make messages command is used for?
+--> 
+4) What is Django URLs?make program to create django urls
+5) What is a QuerySet?Write program to create a new Post object in database:
+6) Mention what command line can be used to load data into Django?
+7) Explain what does django-admin.py make messages command is used for?
+8)
+9)
+10)
 
