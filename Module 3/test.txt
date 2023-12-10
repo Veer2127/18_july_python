@@ -1,0 +1,3 @@
+This is the python programming.
+There are different in-built functions in python.
+Python is very easy language compare to others.
